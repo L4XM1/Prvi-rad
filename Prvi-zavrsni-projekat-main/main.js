@@ -1,3 +1,19 @@
+/*-----------------gallery modal -----------------*/
+var loadFile = function (event) {
+  var image = document.getElementById("img-preview"); //getuje src u modalu, posle postavlja src na vrednost src
+  image.src = URL.createObjectURL(event.target.files[0]); //dodeli putanju sa naseg uredjaja src-u (The new object URL represents the specified File object or Blob object
+  $("#myModal").modal("show");
+};
+
+function uploadToGallery() {
+  let image = document.getElementById("img-preview");
+  var gallery = document.querySelector(".gallery");
+  gallery.innerHTML +=
+    '<div class="col-lg-3 col-md-4 col-sm-6 m-0 p-1"><img src="' +
+    image.src +
+    '"width="100%" height="100%" class="thumbnail"/></div>';
+  $("#myModal").modal("hide");
+}
 
 /*------Email Sub alert-----*/
 
@@ -180,22 +196,6 @@ function addComment() {
 }
 
 
-/*-----------------gallery modal -----------------*/
-var loadFile = function (event) {
-  var image = document.getElementById("img-preview"); //getuje src u modalu, posle postavlja src na vrednost src
-  image.src = URL.createObjectURL(event.target.files[0]); //dodeli putanju sa naseg uredjaja src-u (The new object URL represents the specified File object or Blob object
-  $("#myModal").modal("show");
-};
-
-function uploadToGallery() {
-  let image = document.getElementById("img-preview");
-  var gallery = document.querySelector(".gallery");
-  gallery.innerHTML +=
-    '<div class="col-lg-3 col-md-4 col-sm-6 m-0 p-1"><img src="' +
-    image.src +
-    '"width="100%" height="100%" class="thumbnail"/></div>';
-  $("#myModal").modal("hide");
-}
 
 /*--------------- open reservations -----------------*/ //prebacila sam
 
