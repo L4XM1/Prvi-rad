@@ -185,10 +185,9 @@ function addComment() {
 
     let newComment = {
       avatar: "images/person-circle-outline.svg",
-      comment: document.getElementById("input-comment").value,
+      comment: $("#input-comment").val(),
     };
-
-    blogPostComments.push(JSON.stringify(newComment));
+    blogPostComments.push(newComment);
   });
   request.fail(function (err) {
     $("#commentsNew").append("Oops... there was an" + " " + err.statusText + " " + "so we can't post your comment");
